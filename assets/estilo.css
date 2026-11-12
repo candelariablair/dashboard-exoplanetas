@@ -98,11 +98,3 @@ label {
     color: #F1F5FF !important;
     border-top: 3px solid #00d4ff !important;
 }
-
-/* Contenedor interno de cada pestaña */
-.tab-content {
-    background-color: #141F35;
-    border: 1px solid #202D47;
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-}
