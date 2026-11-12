@@ -79,13 +79,12 @@ Proyecto/
 - **Pestaña 4 - Inspector de Sistemas (`sistema`)**: Vista dedicada para analizar la arquitectura individual de un sistema planetario específico, comparando órbitas y tamaños relativos entre los planetas que lo componen.
 
 ## Capturas de pantalla
-<img width="491" height="251" alt="image" src="https://github.com/user-attachments/assets/6a79dff1-00ab-4c87-a278-51054227b4d5" />
+<img width="368" height="188" alt="image" src="https://github.com/user-attachments/assets/6a79dff1-00ab-4c87-a278-51054227b4d5" />
 
-<img width="491" height="251" alt="image" src="https://github.com/user-attachments/assets/1230c454-d2a7-4d95-ae9c-878ab6ebf86c" />
+<img width="368" height="188" alt="image" src="https://github.com/user-attachments/assets/1230c454-d2a7-4d95-ae9c-878ab6ebf86c" />
 
-<img width="491" height="251" alt="image" src="https://github.com/user-attachments/assets/c79dc389-0417-49bf-8fa0-3607fd67f82e" />
-
-<img width="491" height="251" alt="image" src="https://github.com/user-attachments/assets/cdbad0aa-9bb2-4211-8ee8-12a463be2e17" />
+<img width="368" height="188" alt="image" src="https://github.com/user-attachments/assets/c79dc389-0417-49bf-8fa0-3607fd67f82e" />
+<img width="368" height="188" alt="image" src="https://github.com/user-attachments/assets/cdbad0aa-9bb2-4211-8ee8-12a463be2e17" />
 
 
 
