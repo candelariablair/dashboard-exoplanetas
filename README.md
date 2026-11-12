@@ -1,19 +1,23 @@
-# Explorador Interactivo de Exoplanetas
-Una aplicación web analítica e interactiva desarrollada en Python con Dash y Plotly para la exploración, visualización y análisis de sesgos observacionales en el catálogo de exoplanetas confirmados (Planetary Systems Composite Parameters - PSCompPars NASA).
+# Dashboard Explorador Interactivo de Exoplanetas
+Autora: Candelaria Blair Estrada
 
-## Características Principales
+# Descripción
+Aplicación web analítica e interactiva desarrollada para la exploración, visualización y análisis de exoplanetas confirmados. El dashboard busca responder a la pregunta de investigación: ¿Cómo evolucionan los descubrimientos de exoplanetas a lo largo del tiempo y de qué manera los sesgos observacionales de cada técnica de detección condicionan las características físicas (masa, radio, período orbital y ubicación espacial) de los planetas detectados?
 
-La aplicación está organizada en cuatro módulos principales de visualización, acompañados de un panel de filtros globales dinámicos:
-
-- 🔭 Mapa del Cielo (cielo): Visualización espacial de las coordenadas celestes (Ascensión Recta y Declinación) de los exoplanetas.
-
-- 📈 Evolución de Descubrimientos (evolucion): Análisis temporal del número de exoplanetas descubiertos por año, desglosado por método de detección (Tránsito, Velocidad Radial, Imagen Directa, Microlente gravitacional, etc.).
-
-- ⚖️ Análisis de Sesgos Observacionales (sesgos): Gráficos comparativos (masa, radio, período orbital) diseñados para evidenciar las limitaciones instrumentales y los sesgos de selección de cada técnica de detección.
-
-- 🪐 Inspector de Sistemas Planetarios (sistema): Vista detallada para explorar la arquitectura de sistemas específicos, comparando órbitas, tamaños relativos y parámetros estelares.
-
-- 🎛️ Filtros Dinámicos (filtros): Controles interactivos para segmentar el dataset en tiempo real por método de descubrimiento, rango de años, distancia, nombre del planeta y sistema planetario.
+# Dataset
+- **Fuente**: NASA Exoplanet Archive - Planetary Systems Composite Parameters (`PSCompPars`)
+- **Filas**: 6451 exoplanetas confirmados*
+- **Columnas**: 325 variables astrofísicas y orbitales
+- **Variables principales**:
+    - `pl_name`: Nombre del planeta
+    - `hostname`: Nombre de la estrella anfitriona
+    - `discoverymethod`: Método de descubrimiento (Tránsito, Velocidad Radial, Imagen Directa,Microlente, etc.)
+    - `disc_year`: Año de descubrimiento
+    - `pl_orbper`: Período orbital (días)
+    - `pl_rade`: Radio del planeta (en radios terrestres)
+    - `pl_bmasse`: Masa del planeta (en masas terrestres)
+    - `ra` / `dec`: Coordenadas celestes (Ascensión Recta y Declinación)
+    - `sy_dist`: Distancia al sistema planetario (parsecs)
 
 ## Estructura del Proyecto
 ```bash
@@ -45,36 +49,45 @@ Proyecto/
 ```
 
 ## Pasos para ejecutar localmente
-1. Clonar el repositorio o descargar el proyecto:
+1. Clonar el repositorio e ingresar a la carpeta:
     ```bash
     git clone <https://github.com/candelariablair/dashboard-exoplanetas>
     cd Proyecto
     ```
-2. Crear y activar un entorno virtual (recomendado):
-    - En Linux/macOS:
-        ```bash
-        python3 -m venv venv
-        source venv/bin/activate
-        ```
-    - En Windows:
-        ```bash
-        python -m venv venv
-        venv\Scripts\activate
-        ```
-3. Instalar las dependencias:
+2. Instalar las dependencias:
     ```bash
     pip install -r requirements.txt
     ```
-4. Ejecutar la aplicación:
+3. Ejecutar la aplicación:
     ```bash
     python app.py
     ```
-5. Abrir en el navegador:
+4. Abrir en el navegador:
     ```bash
     Accede a http://127.0.0.1:8050/
     ```
 
-## Fuente de Datos
-Los datos utilizados provienen del archivo data/PSCompPars.tab, correspondiente a la tabla Planetary Systems Composite Parameters del NASA Exoplanet Archive. Esta tabla consolida un único conjunto de parámetros por planeta combinando mediciones de múltiples referencias bibliográficas para maximizar la completitud de los datos.
+## Despliegue
+- **URL**: https://dashboard-exoplanetas.onrender.com/
+- **Plataforma**: Render
 
-Nota: La tabla únicamente incluye los exoplanetas confirmados hasta el 28/10/2026. Para datos más recientes visitar el NASA Exoplanet Archive.
+## Funcionalidades
+- **Panel de Filtros Globales (`filtros`)**: Filtrado dinámico en tiempo real por método de descubrimiento, rango de años de descubrimiento, distancia, nombre del planeta y sistema planetario.
+- **Pestaña 1 - Mapa del Cielo (`cielo`)**: Distribución espacial de los exoplanetas en coordenadas celestes (Ascensión Recta y Declinación) para identificar zonas de observación.
+- **Pestaña 2 - Evolución Temporal (`evolucion`)**: Series de tiempo y gráficos acumulados de descubrimientos por año segmentados por técnica de detección.
+- **Pestaña 3 - Sesgos Observacionales (`sesgos`)**: Gráficos de dispersión comparativos (Masa vs. Período Orbital, Radio vs. Masa) que evidencian las limitaciones instrumentales de cada método.
+- **Pestaña 4 - Inspector de Sistemas (`sistema`)**: Vista dedicada para analizar la arquitectura individual de un sistema planetario específico, comparando órbitas y tamaños relativos entre los planetas que lo componen.
+
+## Capturas de pantalla
+
+
+## Tecnologías
+- Python 3.11
+- Pandas, Plotly, Dash
+- CSS3 personalizado (`assets/estilo.css`)
+
+## Conclusiones
+- **Aprendizajes:** El análisis visual confirma que los métodos de detección presentan fuertes sesgos observacionales: la técnica de Tránsito domina en cantidad gracias a misiones espaciales (como Kepler y TESS) y favorece planetas cercanos a su estrella, mientras que la Velocidad Radial y la Imagen Directa detectan con mayor facilidad planetas masivos o lejanos. A nivel técnico, estructurar Dash de forma modular (`layouts/`, `callbacks/`, `utils/`) facilita enormemente el mantenimiento y escalabilidad del código.
+- **Mejoras futuras:** Incorporar modelos predictivos o de agrupamiento (clustering) para clasificar tipos de planetas (supertierras, júpiteres calientes), añadir indicadores de zona de habitabilidad en el inspector de sistemas y conectar directamente con la API TAP de la NASA para actualizar los datos en tiempo real.
+
+*Nota: La tabla únicamente incluye los exoplanetas confirmados hasta el 28/10/2026. Para datos más recientes visitar el NASA Exoplanet Archive.
