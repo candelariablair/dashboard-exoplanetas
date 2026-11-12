@@ -17,7 +17,7 @@ label {
     margin-bottom: 8px;
 }
 
-/* Tarjeta principal de filtros (Nebula + Orbit) */
+/* Tarjeta principal de filtros */
 .contenedor-filtros {
     background-color: #141F35;
     border: 1px solid #202D47;
@@ -26,7 +26,7 @@ label {
     margin-bottom: 20px;
 }
 
-/* Cuadrícula para los 3 Dropdowns */
+/* Cuadrícula para los 3 dropdowns */
 .fila-dropdowns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -34,7 +34,7 @@ label {
     margin-bottom: 22px;
 }
 
-/* Cuadrícula para los 2 Sliders con padding equilibrado */
+/* Cuadrícula para los 2 sliders */
 .fila-sliders {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -42,12 +42,11 @@ label {
     padding: 0 5px 15px 5px;
 }
 
-/* Espaciado compacto debajo del título de los sliders (para tooltip en bottom) */
 .slider-box label {
     margin-bottom: 14px;
 }
 
-/* Modo oscuro para Dropdowns en Dash 4 */
+/* Modo oscuro para dropdowns*/
 .dash-dropdown,
 .Select-control,
 .Select-menu-outer,
@@ -57,7 +56,7 @@ label {
     color: #F1F5FF !important;
 }
 
-/* Refuerzo en Starlight (#F1F5FF) para los marks de los sliders */
+/* Letra clarita para los marks de los sliders */
 .slider-box span,
 .slider-box button,
 .dash-slider-mark,
@@ -69,7 +68,7 @@ label {
     font-weight: 500;
 }
 
-/* Modo oscuro para TODAS las cajitas de números y tooltips de los Sliders en Dash 4 */
+/* Modo oscuro para todas las cajitas de números y tooltips de los sliders en Dash 4 */
 .dash-slider-tooltip,
 .dash-slider-tooltip-inner,
 .dash-slider-input,
@@ -86,7 +85,7 @@ label {
     border-bottom-color: #202D47 !important;
 }
 
-/* Pestañas (dcc.Tabs) */
+/* Tabs */
 .tab {
     background-color: #141F35 !important;
     color: #F1F5FF !important;
